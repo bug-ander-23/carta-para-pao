@@ -1,0 +1,380 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  .emilys-candy-regular {
+    font-family: "Emilys Candy", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .montez-regular {
+    font-family: "Montez", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  /* Fondo principal */
+  body {
+    font-family: "Montez", serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s infinite ease;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Contenedor principal */
+  #container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5%;
+  }
+  
+  /* Carta */
+  #letter {
+    margin: 10%;
+    transform: translateY(-5%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 5; /* Asegura que esté por encima de los tulipanes */
+
+
+    font-size: 30px;
+    color: #131313;
+  }
+
+  #letter.hidden {
+    visibility: hidden;
+    opacity: 0 !important;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+  }
+  
+  #letter:hover {
+    transform: scale(1.05);
+  }
+  
+
+
+  /* Tulipanes */
+  #tulips {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    
+    display: flex;
+    justify-content: center;    
+    margin-top: 200px;
+    position: relative;
+    z-index: 1; /* Asegura que esté detrás de la carta */
+  }
+
+  .tulip1 {
+    position: fixed;
+    bottom: -30px;
+    width: 50%;
+    height: auto;
+
+    left: 25%;
+    transform-origin: bottom;
+    transform: rotate(-40deg);
+    z-index: 1;
+  }
+  
+  
+  .tulip2 {
+    position: fixed;
+    bottom: -50px;
+    width: 70%;
+    height: auto;
+    
+
+    animation: sway-center 4s infinite ease-in-out;
+    z-index: 2;
+  }
+  
+  .tulip3 {
+    position: fixed;
+    bottom: -20px;
+    width: 50%;
+    height: auto;
+    
+    right: 25%;
+    transform-origin: bottom;
+    transform: rotate(40deg);
+    z-index: 1;
+  }
+
+  .fondo-flores {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Animación de movimiento suave */
+/* Animación de movimiento suave */
+@keyframes sway-left {
+    0%, 100% { transform: rotate(-10deg); } /* Inclinado hacia la izquierda */
+    50% { transform: rotate(0deg); }       /* Posición neutral */
+  }
+  
+  @keyframes sway-right {
+    0%, 100% { transform: rotate(10deg); } /* Inclinado hacia la derecha */
+    50% { transform: rotate(0deg); }       /* Posición neutral */
+  }
+  
+  @keyframes sway-center {
+    0%, 100% { transform: rotate(5deg); }  /* Movimiento suave hacia ambos lados */
+    50% { transform: rotate(-5deg); }
+  }
+  
+  /* Ventana emergente */
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    z-index: 10;
+  }
+  
+  #popup-buttons {
+    margin-top: 20px;
+  }
+  
+  #popup-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #yes-btn {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+  }
+  
+  #no-btn {
+    background: linear-gradient(135deg, #ff6f91, #ff9a9e);
+    color: white;
+  }
+  
+  #popup-buttons button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Elementos ocultos */
+  .hidden {
+    display: none;
+  }
+
+/* Animación de fuegos artificiales */
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15; /* Asegura que esté por encima de todo */
+    pointer-events: none; /* No interfiera con clics */
+  }
+  
+  .firework {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    animation: explode 1.5s infinite ease-out;
+  }
+  
+  .firework:nth-child(1) {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+  }
+  
+  .firework:nth-child(2) {
+    top: 40%;
+    left: 70%;
+    animation-delay: 0.5s;
+  }
+  
+  .firework:nth-child(3) {
+    top: 60%;
+    left: 50%;
+    animation-delay: 1s;
+  }
+  
+  @keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  
+  /* Mensaje final con gatito */
+  #final-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    z-index: 20;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #final-message p {
+    font-size: 1.5rem;
+    color: #ff6f91;
+    margin-bottom: 10px;
+  }
+  
+  #final-message img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+@media screen and (max-width: 350px) {
+    #letter {
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    #letter {
+        font-size: 25px;
+    }
+    
+}
+
+@media screen and (min-width: 600px) {
+
+    .fondo-flores {
+        width: 40%;
+    }
+    
+}
+
+@media screen and (min-width: 900px) {
+    #letter {
+        margin: 2%;
+        width: 50%;
+        transform: translateY(-5%);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 5; /* Asegura que esté por encima de los tulipanes */
+    
+      }
+
+      .tulip1, .tulip2, .tulip3 {
+        position: fixed; /* Mantenerlos fijos en el viewport */
+        bottom: 0; /* Alinearlos desde la parte inferior */
+        transform-origin: bottom; /* Punto de rotación en la base */
+      }
+      
+      .tulip1 {
+        width: 30%;
+        bottom: -30px; /* Posición inferior */
+        left: 35%; /* Posición izquierda */
+        transform: rotate(-40deg);
+        z-index: 1;
+      }
+      
+      .tulip2 {
+        bottom: -50px;
+        width: 45%;
+        transform: translateX(-50%);
+        animation: sway-center 4s infinite ease-in-out;
+        z-index: 2;
+      }
+      
+      .tulip3 {
+        width: 30%;
+        bottom: -30px;
+        right: 37%; /* Posición derecha */
+        transform: rotate(40deg);
+        z-index: 1;
+      }
+
+    .fondo-flores {
+        width: 40%;
+        top: -5%;
+    }
+
+    
+}
+
+@media screen and (min-width: 1200px) {
+  .tulip1 {
+    width: 25%;
+  }
+  
+  .tulip2 {
+      width: 40%;
+    }
+  
+  .tulip3 {
+      width: 25%;
+    }
+
+  .fondo-flores {
+    width: 30%;
+    top: -5%;
+  }
+}

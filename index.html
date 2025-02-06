@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Montez&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><title>¿Quieres ser mi San Valentín?</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Carta de Ander</title>
+</head>
+<body>
+  <!-- Audio de fondo -->
+  <audio id="audio-fondo" autoplay loop>
+    <source src="assets/song-leva-eternity.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Contenedor principal -->
+  <div id="container">
+    <!-- Fondo de flores -->
+     <img src="assets/fondo.png" alt="fondo-flores" class="fondo-flores">
+
+    <!-- Carta -->
+    <div id="letter">
+      <p>Hola ❤️PAOOOO❤️. Te amo, y solo te hice esto para decirte que te quiero mucho</p>
+      <p>Puse tulipanes ya que no sé donde vives para llevarte 🙄</p>
+      <p>Espero que te guste, te amo</p>
+      <p>PD: le puedes dar click al mensaje</p>
+    </div>
+
+    <!-- Tulipanes -->
+    <div id="tulips">
+      <img src="assets/tulipan1.webp" alt="Tulipán" class="tulip1">
+      <img src="assets/tulipan3.webp" alt="Tulipán" class="tulip2">
+      <img src="assets/tulipan1.webp" alt="Tulipán" class="tulip3">
+    </div>
+
+    <!-- Ventana emergente -->
+    <div id="popup" class="hidden">
+      <h2>¿Quieres ser mi San Valentín?</h2>
+      <div id="popup-buttons">
+        <button id="yes-btn">Sí</button>
+        <button id="no-btn">No</button>
+      </div>
+    </div>
+
+    <!-- Animación de fuegos artificiales -->
+    <div id="fireworks" class="hidden">
+      <div class="firework"></div>
+      <div class="firework"></div>
+      <div class="firework"></div>
+    </div>
+
+    <!-- Mensaje final con gatito -->
+    <div id="final-message" class="hidden">
+      <p>¡Haz salvado al gatito! ❤️</p>
+      <img src="assets/gatito.jpg" alt="Gatito feliz">
+    </div>
+  </div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
